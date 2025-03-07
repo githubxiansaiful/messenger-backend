@@ -8,6 +8,7 @@ export const protectRoute = async (req, res, next) => {
 
         // Debugging log to verify token presence
         console.log("Token received:", token);
+        console.log("Received Cookie JWT:", req.cookies?.jwt);
 
         if (!token) {
             return res.status(401).json({ message: "Unauthorized - No token provided." });
